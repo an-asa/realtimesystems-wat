@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SterowanieDrzwiami", "Stero
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelSterowania", "PanelSterowania\PanelSterowania.csproj", "{F99B0523-A338-4195-AD4E-FCD54B447169}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SterowanieZaworemDoplywu", "SterowanieZaworemDoplywu\SterowanieZaworemDoplywu.csproj", "{DE0EEB27-4E43-4DED-95B1-D4DDC76D2D94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silnik", "Silnik\Silnik.csproj", "{35617D4F-A485-460B-842D-9924F1BC39AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{F99B0523-A338-4195-AD4E-FCD54B447169}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F99B0523-A338-4195-AD4E-FCD54B447169}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F99B0523-A338-4195-AD4E-FCD54B447169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE0EEB27-4E43-4DED-95B1-D4DDC76D2D94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE0EEB27-4E43-4DED-95B1-D4DDC76D2D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE0EEB27-4E43-4DED-95B1-D4DDC76D2D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE0EEB27-4E43-4DED-95B1-D4DDC76D2D94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35617D4F-A485-460B-842D-9924F1BC39AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35617D4F-A485-460B-842D-9924F1BC39AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35617D4F-A485-460B-842D-9924F1BC39AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35617D4F-A485-460B-842D-9924F1BC39AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

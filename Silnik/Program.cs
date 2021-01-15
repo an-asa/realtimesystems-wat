@@ -20,7 +20,11 @@ namespace Silnik
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    //statyczne pory to raczej dobry pomys³
+                    string strURL = string.Format(@"http://{0}:{1}", "localhost", "4002");
+                    webBuilder
+                        .UseUrls(strURL)
+                        .UseStartup<Startup>();
                 });
     }
 }

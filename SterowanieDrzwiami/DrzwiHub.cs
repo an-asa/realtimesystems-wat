@@ -14,6 +14,10 @@ namespace SterowanieDrzwiami
             pDevice = device;
         }
 
+        public async Task SendToAll(string text)
+        {
+            await Clients.All.SendAsync("Test", text);
+        }
 
     }
 }

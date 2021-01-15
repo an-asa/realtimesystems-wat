@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "realtimesystems-wat", "realtimesystems-wat\realtimesystems-wat.csproj", "{9464458C-1A45-4BE1-A78F-CF2DFD988A8A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SterowanieDrzwiami", "SterowanieDrzwiami\SterowanieDrzwiami.csproj", "{72A11E98-39FB-4C84-9EC0-639BF0760C30}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelSterowania", "PanelSterowania\PanelSterowania.csproj", "{F99B0523-A338-4195-AD4E-FCD54B447169}"
@@ -13,16 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SterowanieZaworemDoplywu", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silnik", "Silnik\Silnik.csproj", "{35617D4F-A485-460B-842D-9924F1BC39AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sterowanie", "Sterowanie\Sterowanie.csproj", "{F2EAE09F-04A2-4FCC-827D-4CBD722FBF29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9464458C-1A45-4BE1-A78F-CF2DFD988A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9464458C-1A45-4BE1-A78F-CF2DFD988A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9464458C-1A45-4BE1-A78F-CF2DFD988A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9464458C-1A45-4BE1-A78F-CF2DFD988A8A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72A11E98-39FB-4C84-9EC0-639BF0760C30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72A11E98-39FB-4C84-9EC0-639BF0760C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72A11E98-39FB-4C84-9EC0-639BF0760C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{35617D4F-A485-460B-842D-9924F1BC39AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35617D4F-A485-460B-842D-9924F1BC39AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35617D4F-A485-460B-842D-9924F1BC39AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2EAE09F-04A2-4FCC-827D-4CBD722FBF29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2EAE09F-04A2-4FCC-827D-4CBD722FBF29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2EAE09F-04A2-4FCC-827D-4CBD722FBF29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2EAE09F-04A2-4FCC-827D-4CBD722FBF29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

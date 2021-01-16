@@ -9,5 +9,6 @@
     <Import_RootNamespace>Sterowanie</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Klienci\SilnikKlient.cs" />
   </ItemGroup>
 </Project>

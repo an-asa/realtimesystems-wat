@@ -3,15 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SterowanieDrzwiami", "SterowanieDrzwiami\SterowanieDrzwiami.csproj", "{72A11E98-39FB-4C84-9EC0-639BF0760C30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SterowanieDrzwiami", "SterowanieDrzwiami\SterowanieDrzwiami.csproj", "{72A11E98-39FB-4C84-9EC0-639BF0760C30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelSterowania", "PanelSterowania\PanelSterowania.csproj", "{F99B0523-A338-4195-AD4E-FCD54B447169}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PanelSterowania", "PanelSterowania\PanelSterowania.csproj", "{F99B0523-A338-4195-AD4E-FCD54B447169}"
+	ProjectSection(ProjectDependencies) = postProject
+		{35617D4F-A485-460B-842D-9924F1BC39AD} = {35617D4F-A485-460B-842D-9924F1BC39AD}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SterowanieZaworemDoplywu", "SterowanieZaworemDoplywu\SterowanieZaworemDoplywu.csproj", "{DE0EEB27-4E43-4DED-95B1-D4DDC76D2D94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SterowanieZaworemDoplywu", "SterowanieZaworemDoplywu\SterowanieZaworemDoplywu.csproj", "{DE0EEB27-4E43-4DED-95B1-D4DDC76D2D94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silnik", "Silnik\Silnik.csproj", "{35617D4F-A485-460B-842D-9924F1BC39AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silnik", "Silnik\Silnik.csproj", "{35617D4F-A485-460B-842D-9924F1BC39AD}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sterowanie", "Sterowanie\Sterowanie.shproj", "{C1033E20-D740-4B38-91B9-68C23F134ECE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestKonsole", "TestKonsole\TestKonsole.csproj", "{926475D6-99FC-453A-A66D-0B692929CB70}"
+	ProjectSection(ProjectDependencies) = postProject
+		{35617D4F-A485-460B-842D-9924F1BC39AD} = {35617D4F-A485-460B-842D-9924F1BC39AD}
+	EndProjectSection
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Sterowanie\Sterowanie.projitems*{926475d6-99fc-453a-a66d-0b692929cb70}*SharedItemsImports = 5
+		Sterowanie\Sterowanie.projitems*{c1033e20-d740-4b38-91b9-68c23f134ece}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -33,6 +47,10 @@ Global
 		{35617D4F-A485-460B-842D-9924F1BC39AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35617D4F-A485-460B-842D-9924F1BC39AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35617D4F-A485-460B-842D-9924F1BC39AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{926475D6-99FC-453A-A66D-0B692929CB70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{926475D6-99FC-453A-A66D-0B692929CB70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{926475D6-99FC-453A-A66D-0B692929CB70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{926475D6-99FC-453A-A66D-0B692929CB70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

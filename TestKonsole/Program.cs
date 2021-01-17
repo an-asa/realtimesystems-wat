@@ -21,8 +21,8 @@ namespace TestKonsole
             Console.WriteLine("[1 - silnik wlacz  ]");
             Console.WriteLine("[2 - silnik wylacz ]");
 
-            Console.WriteLine("[5 - silnik wlacz  ]");
-            Console.WriteLine("[6 - silnik wylacz ]");
+            Console.WriteLine("[5 - zawor otworz  ]");
+            Console.WriteLine("[6 - zawor zamknij ]");
 
             ConsoleKey klawisz;
             while (!cts.IsCancellationRequested)

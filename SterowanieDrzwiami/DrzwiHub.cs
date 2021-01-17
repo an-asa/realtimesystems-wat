@@ -8,15 +8,22 @@ namespace SterowanieDrzwiami
 {
     public class DrzwiHub : Hub
     {
-        Drzwi pDevice;
-        public DrzwiHub(Drzwi device)
+        DrzwiDevice pDevice;
+
+        public DrzwiHub(DrzwiDevice device)
         {
             pDevice = device;
         }
 
-        public async Task SendToAll(string text)
+        public async Task Otworz()
         {
-            await Clients.All.SendAsync("Test", text);
+            pDevice.Otworz();
+            await Task.CompletedTask;
+        }
+        public async Task Zamknij()
+        {
+            pDevice.Zamknij();
+            await Task.CompletedTask;
         }
 
     }

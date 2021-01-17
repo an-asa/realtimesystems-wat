@@ -17,7 +17,7 @@ namespace SterowanieDrzwiami
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddSingleton<Drzwi>()
+                .AddSingleton<DrzwiDevice>()
                 .AddSignalR()
                 .AddMessagePackProtocol();
         }
@@ -32,10 +32,9 @@ namespace SterowanieDrzwiami
 
             app.UseRouting();
 
-            app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapHub<DrzwiHub>("/drzwi");
+                endpoints.MapHub<DrzwiHub>("/pralka/drzwi");
             });
         }
     }

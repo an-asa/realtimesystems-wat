@@ -10,5 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Klienci\SilnikKlient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Klienci\ZaworKlient.cs" />
   </ItemGroup>
 </Project>

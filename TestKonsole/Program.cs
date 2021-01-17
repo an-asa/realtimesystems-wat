@@ -9,6 +9,7 @@ namespace TestKonsole
         static void Main(string[] args)
         {
             SilnikKlient silnik = new SilnikKlient();
+            ZaworKlient zawor = new ZaworKlient();
 
             CancellationTokenSource cts = new CancellationTokenSource();
             Console.CancelKeyPress += (_, e) =>
@@ -19,6 +20,9 @@ namespace TestKonsole
 
             Console.WriteLine("[1 - silnik wlacz  ]");
             Console.WriteLine("[2 - silnik wylacz ]");
+
+            Console.WriteLine("[5 - silnik wlacz  ]");
+            Console.WriteLine("[6 - silnik wylacz ]");
 
             ConsoleKey klawisz;
             while (!cts.IsCancellationRequested)
@@ -33,6 +37,12 @@ namespace TestKonsole
                     case ConsoleKey.D2:
                         silnik.Wylacz().Wait();
                         break;
+                    case ConsoleKey.D5:
+                        zawor.Otworz().Wait();
+                        break;
+                    case ConsoleKey.D6:
+                        zawor.Zamknij().Wait();
+                        break;
                     case (ConsoleKey)ConsoleSpecialKey.ControlC:
                         break;
 
@@ -40,6 +50,7 @@ namespace TestKonsole
             };
 
             silnik.DisposeAsync();
+            zawor.DisposeAsync();
         }
     }
 }

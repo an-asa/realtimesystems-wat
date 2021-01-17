@@ -9,6 +9,7 @@
     <Import_RootNamespace>Sterowanie</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Klienci\DrzwiKlient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Klienci\SilnikKlient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Klienci\ZaworKlient.cs" />
   </ItemGroup>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Klienci;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace PanelSterowania
     /// </summary>
     public partial class MainWindow : Window
     {
+        SterowanieKlient sterowanie;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,17 +30,20 @@ namespace PanelSterowania
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            Task.Run(() =>
+            {
+                sterowanie = new SterowanieKlient();
+            });
         }
 
         private void Window_Closed(object sender, EventArgs e)
         {
-
+            sterowanie.DisposeAsync();
         }
 
         private void buttonStart_Click(object sender, RoutedEventArgs e)
         {
-
+            Task.Run(() => { sterowanie.Start().Wait(); });
         }
     }
 }

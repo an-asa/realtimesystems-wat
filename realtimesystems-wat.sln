@@ -14,17 +14,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SterowanieZaworemDoplywu", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silnik", "Silnik\Silnik.csproj", "{35617D4F-A485-460B-842D-9924F1BC39AD}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sterowanie", "Sterowanie\Sterowanie.shproj", "{C1033E20-D740-4B38-91B9-68C23F134ECE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestKonsole", "TestKonsole\TestKonsole.csproj", "{926475D6-99FC-453A-A66D-0B692929CB70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestKonsole", "TestKonsole\TestKonsole.csproj", "{926475D6-99FC-453A-A66D-0B692929CB70}"
 	ProjectSection(ProjectDependencies) = postProject
 		{35617D4F-A485-460B-842D-9924F1BC39AD} = {35617D4F-A485-460B-842D-9924F1BC39AD}
 	EndProjectSection
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Klienci", "Klienci\Klienci.shproj", "{C1033E20-D740-4B38-91B9-68C23F134ECE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sterowanie", "Sterowanie\Sterowanie.csproj", "{5B5AD95C-A29F-4681-BD79-15DE234445CF}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Sterowanie\Sterowanie.projitems*{926475d6-99fc-453a-a66d-0b692929cb70}*SharedItemsImports = 5
-		Sterowanie\Sterowanie.projitems*{c1033e20-d740-4b38-91b9-68c23f134ece}*SharedItemsImports = 13
+		Klienci\Klienci.projitems*{926475d6-99fc-453a-a66d-0b692929cb70}*SharedItemsImports = 5
+		Klienci\Klienci.projitems*{c1033e20-d740-4b38-91b9-68c23f134ece}*SharedItemsImports = 13
+		Klienci\Klienci.projitems*{f99b0523-a338-4195-ad4e-fcd54b447169}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +54,10 @@ Global
 		{926475D6-99FC-453A-A66D-0B692929CB70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{926475D6-99FC-453A-A66D-0B692929CB70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{926475D6-99FC-453A-A66D-0B692929CB70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B5AD95C-A29F-4681-BD79-15DE234445CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B5AD95C-A29F-4681-BD79-15DE234445CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B5AD95C-A29F-4681-BD79-15DE234445CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B5AD95C-A29F-4681-BD79-15DE234445CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

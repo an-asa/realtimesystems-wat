@@ -5,13 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PanelSterowania"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        Title="Symulator Pralki" Height="155" Width="488">
     <Grid>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="103,43,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label" Content="Tryb prania" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="programPrania" HorizontalAlignment="Left" Margin="124,12,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Bawełna" Name="bawelna" />
+            <ComboBoxItem Content="Bawełna bez wirowania" Name="bawelnaBezWirowania" />
+            <ComboBoxItem Content="Syntetyki" Name="syntetyki" />
+        </ComboBox>
+        <Label x:Name="label" Content="Program prania:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="Masa prania" HorizontalAlignment="Left" Margin="394,82,0,0" VerticalAlignment="Top"/>
         <Ellipse HorizontalAlignment="Left" Height="72" Margin="396,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="72"/>
-        <Button x:Name="button" Content="Start" HorizontalAlignment="Left" Margin="249,10,0,0" VerticalAlignment="Top" Height="98" Width="110"/>
+        <Button x:Name="buttonStart" Content="Start" Click="buttonStart_Click" HorizontalAlignment="Left" Margin="249,12,0,0" VerticalAlignment="Top" Height="22" Width="110"/>
+        <Label x:Name="label2" Content="Etap prania:" HorizontalAlignment="Left" Height="31" Margin="10,64,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label x:Name="labelEtapPrania" Content="-" HorizontalAlignment="Left" Height="23" Margin="10,100,0,0" VerticalAlignment="Top" Width="95"/>
 
     </Grid>
 </Window>

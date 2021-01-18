@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sterowanie.Klienci
+namespace Klienci
 {
     class SilnikKlient : IAsyncDisposable
     {

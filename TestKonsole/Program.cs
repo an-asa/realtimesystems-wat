@@ -1,4 +1,4 @@
-﻿using Sterowanie.Klienci;
+﻿using Klienci;
 using System;
 using System.Threading;
 

@@ -24,5 +24,20 @@ namespace PanelSterowania
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonStart_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

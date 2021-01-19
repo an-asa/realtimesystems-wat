@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using Klienci;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,9 @@ namespace Sterowanie
             pDevice = device;
         }
 
-        public async Task Start()
+        public async Task Start(ProgramPrania programPrania)
         {
-            pDevice.Start();
-            await Task.CompletedTask;
+            await pDevice.Start(programPrania);
         }
     }
 }

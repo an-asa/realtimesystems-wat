@@ -43,7 +43,24 @@ namespace PanelSterowania
 
         private void buttonStart_Click(object sender, RoutedEventArgs e)
         {
-            Task.Run(() => { sterowanie.Start().Wait(); });
+            string programStr = comboBoxProgramPrania.SelectedValue.ToString();
+
+            Task.Run(() => {
+                ProgramPrania program;
+                
+                if (programStr.Equals("Bawełna"))
+                {
+                    program = ProgramPrania.Bawelna;
+                } else if (programStr.Equals("Bawełna bez wirowania"))
+                {
+                    program = ProgramPrania.BawelnaBezWirowania;
+                } else
+                {
+                    program = ProgramPrania.Syntetyki;
+                }
+
+                sterowanie.Start(program).Wait();
+            });
         }
     }
 }

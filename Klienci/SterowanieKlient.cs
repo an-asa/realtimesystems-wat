@@ -7,7 +7,20 @@ using System.Threading.Tasks;
 
 namespace Klienci
 {
-    class SterowanieKlient : IAsyncDisposable
+    public enum EtapPrania {
+        Pranie = 1,
+        Plukanie = 2,
+        Wirowanie = 3,
+        Zakonczone = 4
+    }
+
+    public enum ProgramPrania {
+        Bawelna = 1,
+        BawelnaBezWirowania = 2,
+        Syntetyki = 3
+    }
+
+    public class SterowanieKlient : IAsyncDisposable
     {
         HubConnection pSterowanieSerwer;
 
@@ -33,9 +46,9 @@ namespace Klienci
             return pSterowanieSerwer.DisposeAsync();
         }
 
-        public async Task Start()
+        public async Task Start(ProgramPrania programPrania)
         {
-            await pSterowanieSerwer.SendAsync("Start");
+            await pSterowanieSerwer.SendAsync("Start", programPrania);
         }
     }
 }

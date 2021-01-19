@@ -23,6 +23,12 @@ namespace PanelSterowania
     {
         SterowanieKlient sterowanie;
 
+        private static readonly Dictionary<string, ProgramPrania> ProgramPraniaStringToEnum = new Dictionary<string, ProgramPrania> {
+            { "Bawełna", ProgramPrania.Bawelna },
+            { "Bawełna bez wirowania", ProgramPrania.BawelnaBezWirowania },
+            { "Syntetyki", ProgramPrania.Syntetyki }
+        };
+
         public MainWindow()
         {
             InitializeComponent();
@@ -33,6 +39,7 @@ namespace PanelSterowania
             Task.Run(() =>
             {
                 sterowanie = new SterowanieKlient();
+                sterowanie.ZmianaEtapuPrania += Sterowanie_ZmianaEtapuPrania;
             });
         }
 
@@ -43,23 +50,16 @@ namespace PanelSterowania
 
         private void buttonStart_Click(object sender, RoutedEventArgs e)
         {
-            string programStr = comboBoxProgramPrania.SelectedValue.ToString();
+            ProgramPrania program = ProgramPraniaStringToEnum[comboBoxProgramPrania.SelectedValue.ToString()];
 
             Task.Run(() => {
-                ProgramPrania program;
-                
-                if (programStr.Equals("Bawełna"))
-                {
-                    program = ProgramPrania.Bawelna;
-                } else if (programStr.Equals("Bawełna bez wirowania"))
-                {
-                    program = ProgramPrania.BawelnaBezWirowania;
-                } else
-                {
-                    program = ProgramPrania.Syntetyki;
-                }
-
                 sterowanie.Start(program).Wait();
+            });
+        }
+        private void Sterowanie_ZmianaEtapuPrania(object sender, EtapPrania etapPrania)
+        {
+            Dispatcher.Invoke(() => {
+                labelEtapPrania.Content = etapPrania.ToString();
             });
         }
     }

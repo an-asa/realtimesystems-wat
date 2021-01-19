@@ -23,6 +23,7 @@ namespace Klienci
     public class SterowanieKlient : IAsyncDisposable
     {
         HubConnection pSterowanieSerwer;
+        public event EventHandler<EtapPrania> ZmianaEtapuPrania;
 
         public SterowanieKlient()
         {
@@ -37,6 +38,12 @@ namespace Klienci
                 await Task.Delay(new Random().Next(0, 5) * 1000);
                 await pSterowanieSerwer.StartAsync();
             };
+
+            pSterowanieSerwer.On<EtapPrania>("ZmianaEtapuPrania", (etapPrania) =>
+            {
+                Console.WriteLine("ZmianaEtapuPrania {0}", etapPrania);
+                ZmianaEtapuPrania?.Invoke(this, etapPrania);
+            });
 
             pSterowanieSerwer.StartAsync().Wait();
         }

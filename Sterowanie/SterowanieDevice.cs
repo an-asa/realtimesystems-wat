@@ -1,4 +1,5 @@
 ﻿using Klienci;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +10,27 @@ namespace Sterowanie
     public class SterowanieDevice
     {
         Task symTask;
+        private readonly IHubContext<SterowanieHub> hubContext;
+        private bool czyPierze = false;
 
-        public SterowanieDevice()
+        public SterowanieDevice(IHubContext<SterowanieHub> hubContext)
         {
             Console.WriteLine("SterowanieDevice: KONSTRUKTOR");
+            this.hubContext = hubContext;
         }
 
-        private void ustawEtapPrania(EtapPrania etapPrania)
+        private async Task ustawEtapPrania(EtapPrania etapPrania)
         {
-            //TODO: SendToClients() + handle on PanelSterowania
+            await hubContext.Clients.All.SendAsync("ZmianaEtapuPrania", etapPrania);
         }
-        private void symuluj(ProgramPrania programPrania)
+        private async Task symuluj(ProgramPrania programPrania)
         {
-            ustawEtapPrania(EtapPrania.Pranie);
+            czyPierze = true;
 
-            while (true)
+            Task.Delay(1000).Wait();
+            await ustawEtapPrania(EtapPrania.Pranie);
+
+            while (czyPierze)
             {
                 Console.WriteLine("SterowanieDevice: Symulowanie");
                 
@@ -34,8 +41,14 @@ namespace Sterowanie
 
         public async Task Start(ProgramPrania programPrania)
         {
-            Console.WriteLine("SterowanieDevice: Start, program = " + programPrania);
-            symTask = Task.Run(() => { symuluj(programPrania); });
+            if (!czyPierze)
+            {
+                Console.WriteLine("SterowanieDevice: Start, program = " + programPrania);
+                symTask = Task.Run(async () => {
+                    await symuluj(programPrania);
+                });
+            }
+            
             await Task.CompletedTask;
         }
     }

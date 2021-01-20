@@ -26,5 +26,11 @@ namespace SterowanieDrzwiami
             await Task.CompletedTask;
         }
 
+        public async Task Status()
+        {
+            //pDevice.Status();
+            await Task.CompletedTask;
+        }
+
     }
 }

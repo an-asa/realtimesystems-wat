@@ -23,6 +23,11 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Klienci", "Klienci\Klienci.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sterowanie", "Sterowanie\Sterowanie.csproj", "{5B5AD95C-A29F-4681-BD79-15DE234445CF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C9867F38-F287-4F98-AA51-5C7EF6BC59CC}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Klienci\Klienci.projitems*{5b5ad95c-a29f-4681-bd79-15de234445cf}*SharedItemsImports = 5

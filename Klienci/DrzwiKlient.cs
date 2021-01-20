@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace Klienci
 {
+    public enum StatusDrzwi : int
+    {
+        Zamkniete = 1,
+        Otwarte = 0
+    }
+
     class DrzwiKlient : IAsyncDisposable
     {
         HubConnection pDrzwiSerwer;

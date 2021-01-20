@@ -13,14 +13,12 @@ namespace Sterowanie
         private readonly IHubContext<SterowanieHub> hubContext;
         private bool czyPierze = false;
         SilnikKlient silnik;
-        ZaworKlient zawor;
 
         public SterowanieDevice(IHubContext<SterowanieHub> hubContext)
         {
             Console.WriteLine("SterowanieDevice: KONSTRUKTOR");
             this.hubContext = hubContext;
             silnik = new SilnikKlient();
-            zawor = new ZaworKlient();
         }
 
         /*public int[,] czasPrania = new int[3, 4] { { 5, 10, 14, 16 }, { 5, 10, 0, 13 }, { 3, 7, 9, 11 } }; //programy prania i etapy prania jako czas rozpoczęcia kolejnego etapu w sekundach
@@ -41,10 +39,7 @@ namespace Sterowanie
 
             czyPierze = true;
 
-            //STEROWANIE ZAWOREM DOPŁYWU WODY
-            zawor.Otworz().Wait();
             Task.Delay(1000).Wait();
-            zawor.Zamknij().Wait();
 
             int i = 0;
             while (czyPierze)

@@ -48,7 +48,7 @@ namespace Klienci
             await pSilnikSerwer.SendAsync("UstawPredkoscKatowa", predkoscKatowa);
         }
 
-        public async Task UstawPredkoscKatowa(int kierunekObrotu)
+        public async Task UstawKierunek(int kierunekObrotu)
         {
             await pSilnikSerwer.SendAsync("UstawKierunekObrotu", kierunekObrotu);
         }

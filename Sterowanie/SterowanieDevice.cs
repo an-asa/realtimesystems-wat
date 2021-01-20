@@ -12,11 +12,13 @@ namespace Sterowanie
         Task symTask;
         private readonly IHubContext<SterowanieHub> hubContext;
         private bool czyPierze = false;
+        SilnikKlient silnik;
 
         public SterowanieDevice(IHubContext<SterowanieHub> hubContext)
         {
             Console.WriteLine("SterowanieDevice: KONSTRUKTOR");
             this.hubContext = hubContext;
+            silnik = new SilnikKlient();
         }
 
         /*public int[,] czasPrania = new int[3, 4] { { 5, 10, 14, 16 }, { 5, 10, 0, 13 }, { 3, 7, 9, 11 } }; //programy prania i etapy prania jako czas rozpoczęcia kolejnego etapu w sekundach
@@ -32,6 +34,8 @@ namespace Sterowanie
         private async Task symuluj(ProgramPrania programPrania)
         {
             //sprawdź ciężar
+            //sprawdź zamknięcie drzwi
+            //zamknij drzwi
 
             czyPierze = true;
 
@@ -46,16 +50,26 @@ namespace Sterowanie
                     case 0:
                         await ustawEtapPrania(EtapPrania.Pranie);
                         Console.WriteLine("SterowanieDevice: EtapPrania.Pranie");
+                        silnik.UstawPredkoscKatowa(8).Wait();
+                        silnik.Zalacz().Wait();
+                        silnik.UstawPredkoscKatowa(10).Wait();
+                        silnik.Wylacz().Wait();
                         break;
                     case 5: 
                         await ustawEtapPrania(EtapPrania.Plukanie);
                         Console.WriteLine("SterowanieDevice: EtapPrania.Plukanie");
+                        silnik.UstawPredkoscKatowa(8).Wait();
+                        silnik.Zalacz().Wait();
+                        silnik.Wylacz().Wait();
                         break;
                     case 10:
                         if(programPrania != ProgramPrania.BawelnaBezWirowania)
                         {
                             await ustawEtapPrania(EtapPrania.Wirowanie);
                             Console.WriteLine("SterowanieDevice: EtapPrania.Wirowanie");
+                            silnik.UstawPredkoscKatowa(50).Wait();
+                            silnik.Zalacz().Wait();
+                            silnik.Wylacz().Wait();
                         }
                         break;
                     case 12: 

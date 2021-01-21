@@ -96,6 +96,7 @@ namespace Sterowanie
                     case 15:
                         czyPierze = false;
                         Console.WriteLine("SterowanieDevice: Koniec prania");
+                        drzwi.Otworz().Wait();
                         break;
                     default:
                         Console.Write(".");

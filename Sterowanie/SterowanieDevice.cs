@@ -13,12 +13,16 @@ namespace Sterowanie
         private readonly IHubContext<SterowanieHub> hubContext;
         private bool czyPierze = false;
         SilnikKlient silnik;
+        ZaworKlient zawor;
+        DrzwiKlient drzwi;
 
         public SterowanieDevice(IHubContext<SterowanieHub> hubContext)
         {
             Console.WriteLine("SterowanieDevice: KONSTRUKTOR");
             this.hubContext = hubContext;
             silnik = new SilnikKlient();
+            zawor = new ZaworKlient();
+            drzwi = new DrzwiKlient();
         }
 
         private static readonly Dictionary<ProgramPrania, int> ProgramPraniaToPredkosc = new Dictionary<ProgramPrania, int> {
@@ -45,7 +49,11 @@ namespace Sterowanie
 
             czyPierze = true;
 
+            drzwi.Zamknij().Wait();
+                
+            zawor.Otworz().Wait();
             Task.Delay(1000).Wait();
+            zawor.Zamknij().Wait();
 
             int i = 0;
             while (czyPierze)

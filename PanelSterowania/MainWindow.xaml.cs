@@ -35,6 +35,15 @@ namespace PanelSterowania
             InitializeComponent();
         }
 
+        private void log(string component, string message)
+        {
+            DateTime currentTime = DateTime.Now;
+            Dispatcher.Invoke(() =>
+            {
+                textBlockLog.Text += "[" + currentTime + "] " + component + ": " + message + Environment.NewLine;
+            });
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Task.Run(() =>
@@ -57,18 +66,23 @@ namespace PanelSterowania
 
             Task.Run(() => {
                 sterowanie.Start(program).Wait();
+                Dispatcher.Invoke(() => {
+                    log("PanelSterowania", "Start(" + program + ")");
+                });
             });
         }
         private void Sterowanie_ZmianaEtapuPrania(object sender, EtapPrania etapPrania)
         {
             Dispatcher.Invoke(() => {
                 labelEtapPrania.Content = etapPrania.ToString();
+                log("Sterowanie", "ZmianaEtapuPrania(" + etapPrania.ToString() + ")");
             });
         }
         private void Silnik_ZmianaPredkosciKatowej(object sender, float predkoscKatowa)
         {
             Dispatcher.Invoke(() => {
                 labelPredkoscKatowa.Content = predkoscKatowa.ToString();
+                log("Silnik", "ZmianaPredkosciKatowej(" + predkoscKatowa.ToString() + ")");
             });
         }
     }

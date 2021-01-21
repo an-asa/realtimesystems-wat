@@ -22,6 +22,7 @@ namespace PanelSterowania
     public partial class MainWindow : Window
     {
         SterowanieKlient sterowanie;
+        SilnikKlient silnik;
 
         private static readonly Dictionary<string, ProgramPrania> ProgramPraniaStringToEnum = new Dictionary<string, ProgramPrania> {
             { "Bawełna", ProgramPrania.Bawelna },
@@ -40,6 +41,8 @@ namespace PanelSterowania
             {
                 sterowanie = new SterowanieKlient();
                 sterowanie.ZmianaEtapuPrania += Sterowanie_ZmianaEtapuPrania;
+                silnik = new SilnikKlient();
+                silnik.ZmianaPredkosciKatowej += Silnik_ZmianaPredkosciKatowej;
             });
         }
 
@@ -60,6 +63,12 @@ namespace PanelSterowania
         {
             Dispatcher.Invoke(() => {
                 labelEtapPrania.Content = etapPrania.ToString();
+            });
+        }
+        private void Silnik_ZmianaPredkosciKatowej(object sender, float predkoscKatowa)
+        {
+            Dispatcher.Invoke(() => {
+                labelPredkoscKatowa.Content = predkoscKatowa.ToString();
             });
         }
     }

@@ -21,6 +21,12 @@ namespace Sterowanie
             silnik = new SilnikKlient();
         }
 
+        private static readonly Dictionary<ProgramPrania, int> ProgramPraniaToPredkosc = new Dictionary<ProgramPrania, int> {
+            { ProgramPrania.Bawelna, 15 },
+            { ProgramPrania.BawelnaBezWirowania, 13 },
+            { ProgramPrania.Syntetyki, 10 }
+        };
+
         /*public int[,] czasPrania = new int[3, 4] { { 5, 10, 14, 16 }, { 5, 10, 0, 13 }, { 3, 7, 9, 11 } }; //programy prania i etapy prania jako czas rozpoczęcia kolejnego etapu w sekundach
         public int getCzasPrania(ProgramPrania programPrania, EtapPrania etapPrania)
         {
@@ -50,29 +56,32 @@ namespace Sterowanie
                     case 0:
                         await ustawEtapPrania(EtapPrania.Pranie);
                         Console.WriteLine("SterowanieDevice: EtapPrania.Pranie");
-                        silnik.UstawPredkoscKatowa(8).Wait();
+
+                        int predkosc = ProgramPraniaToPredkosc[programPrania];
+
+                        silnik.UstawPredkoscKatowa(predkosc).Wait();
                         silnik.Zalacz().Wait();
-                        silnik.UstawPredkoscKatowa(10).Wait();
-                        silnik.Wylacz().Wait();
                         break;
-                    case 5: 
+                    case 5:
+                        silnik.Wylacz().Wait();
                         await ustawEtapPrania(EtapPrania.Plukanie);
                         Console.WriteLine("SterowanieDevice: EtapPrania.Plukanie");
                         silnik.UstawPredkoscKatowa(8).Wait();
                         silnik.Zalacz().Wait();
-                        silnik.Wylacz().Wait();
                         break;
                     case 10:
                         if(programPrania != ProgramPrania.BawelnaBezWirowania)
                         {
+                            silnik.Wylacz().Wait();
                             await ustawEtapPrania(EtapPrania.Wirowanie);
                             Console.WriteLine("SterowanieDevice: EtapPrania.Wirowanie");
                             silnik.UstawPredkoscKatowa(50).Wait();
                             silnik.Zalacz().Wait();
-                            silnik.Wylacz().Wait();
                         }
                         break;
-                    case 12: 
+                    case 12:
+                        silnik.Wylacz().Wait();
+                        silnik.UstawPredkoscKatowa(0).Wait();
                         await ustawEtapPrania(EtapPrania.Zakonczone);
                         Console.WriteLine("SterowanieDevice: EtapPrania.Zakonczone");
                         break;

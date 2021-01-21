@@ -29,6 +29,7 @@ namespace Silnik
         public async Task UstawPredkoscKatowa(float predkoscKatowa)
         {
             pDevice.UstawPredkoscKatowa(predkoscKatowa);
+            _ = Clients.All.SendAsync("ZmianaPredkosciKatowej", predkoscKatowa);
             await Task.CompletedTask;
         }
 

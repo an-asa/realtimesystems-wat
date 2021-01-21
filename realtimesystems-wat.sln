@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SterowanieDrzwiami", "SterowanieDrzwiami\SterowanieDrzwiami.csproj", "{72A11E98-39FB-4C84-9EC0-639BF0760C30}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PanelSterowania", "PanelSterowania\PanelSterowania.csproj", "{F99B0523-A338-4195-AD4E-FCD54B447169}"
-	ProjectSection(ProjectDependencies) = postProject
-		{35617D4F-A485-460B-842D-9924F1BC39AD} = {35617D4F-A485-460B-842D-9924F1BC39AD}
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SterowanieZaworemDoplywu", "SterowanieZaworemDoplywu\SterowanieZaworemDoplywu.csproj", "{DE0EEB27-4E43-4DED-95B1-D4DDC76D2D94}"
 EndProject

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Loaded="Window_Loaded"
         Closed="Window_Closed"
-        Title="Symulator Pralki" Height="174" Width="470">
+        Title="Symulator Pralki" Height="199" Width="470">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="196*"/>
@@ -24,7 +24,9 @@
         <Ellipse HorizontalAlignment="Left" Height="72" Margin="95,50,0,0" Stroke="Black" VerticalAlignment="Top" Width="72" Grid.Column="2"/>
         <Button x:Name="buttonStart" Content="Start" Click="buttonStart_Click" HorizontalAlignment="Left" Margin="76,12,0,0" VerticalAlignment="Top" Height="22" Width="110" Grid.Column="2"/>
         <Label x:Name="label2" Content="Etap prania:" HorizontalAlignment="Left" Height="31" Margin="10,64,0,0" VerticalAlignment="Top" Width="95"/>
-        <Label x:Name="labelEtapPrania" Content="-" HorizontalAlignment="Left" Height="23" Margin="115,0,0,0" VerticalAlignment="Center" Width="95" Grid.ColumnSpan="2"/>
+        <Label x:Name="labelEtapPrania" Content="-" HorizontalAlignment="Left" Height="23" Margin="105,68,0,0" VerticalAlignment="Top" Width="95" Grid.ColumnSpan="2"/>
+        <Label x:Name="label3" Content="Prędkość kątowa silnika:" HorizontalAlignment="Left" Height="31" Margin="10,117,0,0" VerticalAlignment="Top" Width="152"/>
+        <Label x:Name="labelPredkoscKatowa" Content="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="26" Margin="177,120,0,0" VerticalAlignment="Top" Width="97"/>
 
     </Grid>
 </Window>

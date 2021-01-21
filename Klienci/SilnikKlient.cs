@@ -10,6 +10,7 @@ namespace Klienci
     class SilnikKlient : IAsyncDisposable
     {
         HubConnection pSilnikSerwer;
+        public event EventHandler<float> ZmianaPredkosciKatowej;
 
         public SilnikKlient()
         {
@@ -24,6 +25,12 @@ namespace Klienci
                 await Task.Delay(new Random().Next(0, 5) * 1000);
                 await pSilnikSerwer.StartAsync();
             };
+
+            pSilnikSerwer.On<float>("ZmianaPredkosciKatowej", (predkosdKatowa) =>
+            {
+                Console.WriteLine("ZmianaPredkosciKatowej {0}", predkosdKatowa);
+                ZmianaPredkosciKatowej?.Invoke(this, predkosdKatowa);
+            });
 
             pSilnikSerwer.StartAsync().Wait();
         }
